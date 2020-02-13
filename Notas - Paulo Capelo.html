@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+
+<script>
+
+var n = parseInt(prompt("Número de notas"));
+var nota;
+var c = 0;
+var i = 0;//o i serve pra contagem
+
+while (i < n) {
+  i = i + 1;
+  nota = parseInt(prompt("Nota do aluno:"));
+
+  if (nota >= 50) {
+    c = c + 1;
+  }
+}
+
+document.write("Número de aprovados: " + c);
+
+
+</script>
