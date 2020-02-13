@@ -1,0 +1,62 @@
+<script>
+
+//VARIAVEIS
+
+var liquido;
+
+var tributação;
+var tributoEmReais;
+
+var base = parseFloat(prompt("Aqui vai seu salário sem valores adicionais")); //FLOAT PRA NÃO COFLITAR COM NÚMERO QUEBRADO
+var tempo =parseFloat(prompt("Aqui vai seu tempo (em anos)"));
+
+var extra;
+
+
+    if(base < 200){
+        tributação = 0
+        alert("A taxa da sua tributação é "+tributação+"%");
+    }else if(base >= 200 && base <= 450){
+        tributação = 3;
+        tributoEmReais=base*tributação/100;
+        alert("A taxa de tributação é de "+tributação+"% "+"O total, em reais, pago em tributos é "+tributoEmReais+"");
+    }else if(base > 450 && base < 700){
+        tributação = 8;
+        tributoEmReais=base*tributação/100;
+        alert("A taxa de tributação é de "+tributação+"% "+"O total, em reais, pago em tributos é "+tributoEmReais+"");
+    } else if(base >= 700){
+        tributação = 12;
+        tributoEmReais=base*tributação/100;
+        alert("A taxa de tributação é de "+tributação+"% "+"O total, em reais, pago em tributos é "+tributoEmReais+"");
+    }
+
+    if(base >500){
+        if(tempo <= 3){
+            extra = 20;
+            alert("O valor da gratificação é "+extra);
+        }else if(tempo >3)
+            extra = 30;
+            alert("O valor da gratificação é "+extra);
+    }else if(base<= 500){
+            if(tempo <=3){
+            extra = 23;
+            alert("O valor da gratificação é R$"+extra+" reais");
+        }else if(tempo>3 && tempo < 6){
+            extra = 35;
+            alert("O valor da gratificação é R$"+extra+" reais");
+        }else if(tempo >= 6){
+            extra = 33;
+            alert("O valor da gratificação é R$"+extra+" reais");
+
+        }
+    }
+    liquido = base - tributação + extra; //REFAZER O CÁLCULO DEPOIS
+    if(liquido <= 350){
+        alert("Classe: A")
+    }else if(liquido > 350 && liquido < 600){
+        alert("Classe: B")
+    }else if(liquido >= 600){
+        alert("Classe: C")
+    }
+
+</script>
